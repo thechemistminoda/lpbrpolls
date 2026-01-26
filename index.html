@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+  <title>LP:BR Enquetes</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+
+  <script type="module" src="script.js" defer></script>
+  <script type="module" src="database.js" defer></script>
+
+</head>
+
+<body>
+  <main class="main-content hidden">
+    <div class="logged-out-area">
+      <article class="password-hint">
+        A senha pode ser encontrada em algum lugar no meio das regras do grupo no WhatsApp. :D
+      </article>
+      <div class="password-container">
+        <p class="password-placeholder">Passe mágico aqui</p>
+        <input type="password" id="password-input">
+        <div id="password-input-decorator"></div>
+        <p id="password-visible"></p>
+      </div>
+      <div class="has-right-password hidden">
+        <div id="firebaseui-auth-container"></div>
+      </div>
+    </div>
+    <div class="logged-in-area">
+      <div class="logout">
+        <button id="logout-button">Sair</button>
+      </div>
+      <div class="polls-nav">
+        <a href="#age-poll">Enquete de Idade</a>
+        <a href="#sexuality-poll">Enquete de orientação sexual</a>
+      </div>
+      <h3 id="age-poll">Qual sua faixa etária?</h3>
+      <form id="issueInputForm">
+        <div class="form-group" id="form-group">
+          <input type="radio" id="age1" name="age" value="under18" required>
+          <label for="age1">Menos de 18 anos</label><br>
+          <div id="under18-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age2" name="age" value="18to24">
+          <label for="age2">18-24 anos</label><br>
+          <div id="18to24-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age3" name="age" value="25to29">
+          <label for="age3">25-29 anos</label><br>
+          <div id="25to29-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age4" name="age" value="30to34">
+          <label for="age4">30-34 anos</label><br>
+          <div id="30to34-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age5" name="age" value="35to39">
+          <label for="age5">35-39 anos</label><br>
+          <div id="35to39-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age6" name="age" value="40to44">
+          <label for="age6">40-44 anos</label><br>
+          <div id="40to44-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age7" name="age" value="45to49">
+          <label for="age7">45-49 anos</label><br>
+          <div id="45to49-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age8" name="age" value="50to54">
+          <label for="age8">50-54 anos</label><br>
+          <div id="50to54-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age9" name="age" value="55to59">
+          <label for="age9">55-59 anos</label><br>
+          <div id="55to59-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+
+          <input type="radio" id="age10" name="age" value="60plus">
+          <label for="age10">60 anos ou mais</label><br>
+          <div id="60plus-voters">
+            <p class="total-votes"></p>
+            <div class="img-container"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+  </main>
+  <aside>
+    <img src="./download.png" alt="linkin dudes" />
+  </aside>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</body>
+
+</html>
