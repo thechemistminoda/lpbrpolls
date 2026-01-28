@@ -104,8 +104,8 @@ function handleView() {
         toggleVisibility('only-for-mobile', true);
         mainContent.innerHTML = '';
     } else {
-        mobileOnlySection.style.display = 'none';
-        mainContent.style.display = 'block';
+        toggleVisibility('only-for-mobile', false);
+        toggleVisibility('mobile-section', true);
     }
 }
 
